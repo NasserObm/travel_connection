@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:travel_connection/home.dart';
+// ignore: unused_import, depend_on_referenced_packages
 import 'package:email_validator/email_validator.dart';
+import 'package:travel_connection/signup.dart';
 
 class Connection extends StatefulWidget {
   const Connection({super.key});
@@ -19,7 +21,10 @@ class _ConnectionState extends State<Connection> {
       body: Stack(
         children: [
           Container(
-              color: const Color(0xff018868),
+              decoration: const BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage('assets/img/pattern.jpg'),
+                      fit: BoxFit.cover)),
               width: double.infinity,
               height: 200,
               child: GestureDetector(
@@ -59,7 +64,7 @@ class _ConnectionState extends State<Connection> {
                         padding: EdgeInsets.only(top: 50),
                         child: Center(
                           child: Text(
-                            'Hello again!',
+                            'Hello Again!',
                             style: TextStyle(
                                 fontSize: 40, fontWeight: FontWeight.bold),
                           ),
@@ -165,8 +170,10 @@ class _ConnectionState extends State<Connection> {
                                   ),
                                 ),
                               ),
+                              const SizedBox(height: 20),
                               const Padding(
                                 padding: EdgeInsets.only(top: 30),
+                                // ignore: unnecessary_const
                                 child: const Row(
                                   children: <Widget>[
                                     Expanded(
@@ -194,6 +201,83 @@ class _ConnectionState extends State<Connection> {
                                   ],
                                 ),
                               ),
+                              const SizedBox(height: 50),
+                              SizedBox(
+                                width: double.infinity,
+                                height: 50,
+                                child: ElevatedButton.icon(
+                                  onPressed: () {},
+                                  icon: Image.asset(
+                                    'assets/img/google.png',
+                                    height: 24,
+                                  ),
+                                  label: const Text(
+                                    'Sign in with Google',
+                                    style: TextStyle(
+                                        color: Color(0xff000000),
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.white,
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(2)),
+                                    side: const BorderSide(color: Colors.grey),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              SizedBox(
+                                width: double.infinity,
+                                height: 50,
+                                child: ElevatedButton.icon(
+                                  onPressed: () {},
+                                  icon: Image.asset(
+                                    'assets/img/twitter.png',
+                                    height: 24,
+                                  ),
+                                  label: const Text(
+                                    'Sign in with Twitter',
+                                    style: TextStyle(
+                                        color: Color(0xff000000),
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.white,
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(2)),
+                                    side: const BorderSide(color: Colors.grey),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 30,
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    'Not a member yet?',
+                                    style:
+                                        TextStyle(color: Colors.grey.shade400),
+                                  ),
+                                  GestureDetector(
+                                    onTap: () => Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => const Signup()),
+                                    ),
+                                    child: const Text(
+                                      'Sign up',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  )
+                                ],
+                              )
                             ],
                           ),
                         ),
