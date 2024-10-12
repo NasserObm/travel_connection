@@ -12,6 +12,7 @@ class myApk extends StatelessWidget {
     return const MaterialApp(
       title: 'travel-connection',
       home: Home(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
