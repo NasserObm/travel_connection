@@ -28,7 +28,7 @@ class _ConnectionState extends State<Connection> {
               width: double.infinity,
               height: 200,
               child: GestureDetector(
-                onLongPress: () => {
+                onTap: () => {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => const Home()),
